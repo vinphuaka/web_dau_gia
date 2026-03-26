@@ -1,0 +1,116 @@
+.navbar {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Thanh tìm kiếm ở giữa */
+.search-bar-container {
+  flex: 1;
+  max-width: 450px;
+  margin: 0 20px;
+}
+
+.search-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  color: #94a3b8;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  background: #f1f5f9;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  background: white;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn-bid {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Dropdown Menu Styles */
+.nav-item-wrapper { position: relative; }
+.nav-link { cursor: pointer; font-weight: 500; }
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 8px;
+  z-index: 1000;
+  border: 1px solid #f1f5f9;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.dropdown-item:hover { background: #f0f7ff; color: #2563eb; }

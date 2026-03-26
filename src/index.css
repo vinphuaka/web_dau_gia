@@ -1,0 +1,263 @@
+/* 1. Định nghĩa màu sắc và Font chữ chung */
+:root {
+  --primary: #2563eb; /* Màu xanh thương hiệu */
+  --bg: #f8fafc;
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Container để căn giữa và tạo khoảng cách biên */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 3. Style cho Navbar (Header) */
+.navbar {
+  background-color: var(--white);
+  border-bottom: 1px solid #edf2f7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px; /* Chiều cao cố định cho Header thoáng */
+}
+
+/* 4. Logo */
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--primary);
+  cursor: pointer;
+  letter-spacing: -1px;
+}
+
+/* 5. Cụm menu và khoảng cách (Sửa lỗi dính chữ) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Khoảng cách rộng giữa các mục menu */
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* Icon mũi tên ⌄ */
+.nav-link span {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+/* 6. Style cho nút Đăng Bán xịn xò */
+.btn-bid {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 8px; /* Bo góc hiện đại */
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.btn-bid:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* 7. Dropdown Menu Sổ Xuống (Đẹp như mẫu) */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  width: 240px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid #f1f5f9;
+  padding: 8px;
+  z-index: 10000;
+  animation: fadeInDown 0.2s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #eff6ff;
+  color: var(--primary);
+}
+/* Tối ưu layout cho Header để chứa thêm Search Bar */
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Chia làm 3 phần: Logo - Search - Menu */
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+}
+
+/* Container cho thanh tìm kiếm */
+.search-bar-container {
+  width: 100%;
+  max-width: 500px; /* Độ rộng tối đa của thanh search */
+  justify-self: center;
+}
+
+.search-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Chừa khoảng trống bên trái cho icon */
+  background-color: #f1f5f9; /* Màu nền xám nhạt hiện đại */
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.auction-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.card-image-container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ef4444;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.current-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #2563eb;
+  margin-top: 4px;
+}
+
+.bid-action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.bid-input-light {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+}
+
+.btn-bid-card {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
