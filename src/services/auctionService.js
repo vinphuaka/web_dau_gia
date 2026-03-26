@@ -5,7 +5,7 @@ import {
   doc, 
   updateDoc, 
   serverTimestamp, 
-  increment 
+ // increment 
 } from "firebase/firestore";
 
 // 1. Hàm tạo một sản phẩm đấu giá mới
