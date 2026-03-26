@@ -4,7 +4,7 @@ import {
   addDoc, 
   doc, 
   updateDoc, 
-  serverTimestamp, 
+  serverTimestamp
  // increment 
 } from "firebase/firestore";
 
